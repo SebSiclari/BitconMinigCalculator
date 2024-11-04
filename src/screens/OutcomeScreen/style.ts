@@ -1,6 +1,6 @@
 import { StyleSheet } from "react-native";
 
-export  const styles = StyleSheet.create({
+export const styles = StyleSheet.create({
     container: {
       flex: 1,
       backgroundColor: '#f5f5f5',
@@ -9,7 +9,7 @@ export  const styles = StyleSheet.create({
       padding: 20,
     },
     card: {
-      backgroundColor: 'white',
+      backgroundColor: '#231f10',
       borderRadius: 8,
       padding: 16,
       marginBottom: 20,
@@ -26,7 +26,7 @@ export  const styles = StyleSheet.create({
       fontSize: 18,
       fontWeight: 'bold',
       marginBottom: 12,
-      color: '#333',
+      color: '#cbc090',
     },
     resultRow: {
       flexDirection: 'row',
@@ -37,15 +37,15 @@ export  const styles = StyleSheet.create({
     },
     resultLabel: {
       fontSize: 16,
-      color: '#666',
+      color: '#cbc090',
     },
     resultValue: {
       fontSize: 16,
       fontWeight: '600',
-      color: '#333',
+      color: '#cbc090',
     },
     button: {
-      backgroundColor: '#2196F3',
+      backgroundColor: '#FFB800',
       padding: 16,
       borderRadius: 8,
       alignItems: 'center',

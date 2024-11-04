@@ -3,13 +3,16 @@ import {
   View,
   Text,
   ScrollView,
-  StyleSheet,
   TouchableOpacity,
 } from 'react-native';
 import { RouteProp } from '@react-navigation/native';
 import { NativeStackNavigationProp } from '@react-navigation/native-stack';
 import { RootStackParamList } from '../../interfaces/RootNavigator';
 import { ResultRow } from '../../components/ResultRow';
+import { styles } from './style';
+import { globalStyles } from '../../styles/globaltheme';
+import { CustomHeader } from '../../components/navigation/Header';
+import SafeAreaView from "react-native-safe-area-view";
 
 type Props = {
   route: RouteProp<RootStackParamList, 'Outcome'>;
@@ -20,7 +23,8 @@ export const OutcomeScreen: React.FC<Props> = ({ route, navigation }) => {
   const { calculationResults } = route.params;
 
   return (
-    <ScrollView style={styles.container}>
+    <SafeAreaView style={globalStyles.container}>
+      <CustomHeader title="Outcome" />
       <View style={styles.content}>
         <View style={styles.card}>
           <Text style={styles.sectionTitle}>Daily</Text>
@@ -60,70 +64,12 @@ export const OutcomeScreen: React.FC<Props> = ({ route, navigation }) => {
         </View>
 
         <TouchableOpacity 
-          style={styles.button}
+          style={globalStyles.button}
           onPress={() => navigation.goBack()}
         >
-          <Text style={styles.buttonText}>Calculate Again</Text>
+          <Text style={globalStyles.buttonText}>Calculate Again</Text>
         </TouchableOpacity>
       </View>
-    </ScrollView>
+    </SafeAreaView>
   );
 };
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#f5f5f5',
-  },
-  content: {
-    padding: 20,
-  },
-  card: {
-    backgroundColor: 'white',
-    borderRadius: 8,
-    padding: 16,
-    marginBottom: 20,
-    shadowColor: '#000',
-    shadowOffset: {
-      width: 0,
-      height: 2,
-    },
-    shadowOpacity: 0.1,
-    shadowRadius: 4,
-    elevation: 2,
-  },
-  sectionTitle: {
-    fontSize: 18,
-    fontWeight: 'bold',
-    marginBottom: 12,
-    color: '#333',
-  },
-  resultRow: {
-    flexDirection: 'row',
-    justifyContent: 'space-between',
-    paddingVertical: 8,
-    borderBottomWidth: 1,
-    borderBottomColor: '#f0f0f0',
-  },
-  resultLabel: {
-    fontSize: 16,
-    color: '#666',
-  },
-  resultValue: {
-    fontSize: 16,
-    fontWeight: '600',
-    color: '#333',
-  },
-  button: {
-    backgroundColor: '#2196F3',
-    padding: 16,
-    borderRadius: 8,
-    alignItems: 'center',
-    marginTop: 20,
-  },
-  buttonText: {
-    color: 'white',
-    fontSize: 16,
-    fontWeight: 'bold',
-  },
-});

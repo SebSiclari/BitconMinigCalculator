@@ -1,79 +1,170 @@
-This is a new [**React Native**](https://reactnative.dev) project, bootstrapped using [`@react-native-community/cli`](https://github.com/react-native-community/cli).
+# Bitcoin Mining Profitability Calculator
 
-# Getting Started
+A React Native mobile application that helps users calculate the profitability of their Bitcoin mining operations by considering various factors such as hash rate, power consumption, electricity costs, and initial investment.
 
->**Note**: Make sure you have completed the [React Native - Environment Setup](https://reactnative.dev/docs/environment-setup) instructions till "Creating a new application" step, before proceeding.
+## Features
 
-## Step 1: Start the Metro Server
+- Calculate daily, monthly, and yearly mining profitability
+- Input validation for all parameters
+- Real-time error feedback
+- Detailed results including:
+  - Revenue in USD and BTC
+  - Operating costs
+  - Net profit
+  - Break-even timeline
+  - Cost to mine 1 BTC
 
-First, you will need to start **Metro**, the JavaScript _bundler_ that ships _with_ React Native.
+## Getting Started
 
-To start Metro, run the following command from the _root_ of your React Native project:
+### Prerequisites
 
+- Node.js (v14 or higher)
+- npm or yarn
+- React Native development environment setup
+- iOS Simulator or Android Emulator
+
+### Installation
+
+1. Clone the repository
 ```bash
-# using npm
-npm start
+git clone https://github.com/yourusername/bitcoin-mining-calculator.git
+```
 
-# OR using Yarn
+2. Install dependencies
+```bash
+cd bitcoin-mining-calculator
+npm install
+# or
+yarn install
+```
+
+3. Start the Metro bundler
+```bash
+npm start
+# or
 yarn start
 ```
 
-## Step 2: Start your Application
-
-Let Metro Bundler run in its _own_ terminal. Open a _new_ terminal from the _root_ of your React Native project. Run the following command to start your _Android_ or _iOS_ app:
-
-### For Android
-
+4. Run the application
 ```bash
-# using npm
-npm run android
+# For iOS
+npm run ios
+# or
+yarn ios
 
-# OR using Yarn
+# For Android
+npm run android
+# or
 yarn android
 ```
 
-### For iOS
+## Technology Stack
 
-```bash
-# using npm
-npm run ios
+### Core Technologies
+- React Native (v0.72.5)
+- TypeScript (v4.8.4)
 
-# OR using Yarn
-yarn ios
+### Navigation
+- @react-navigation/native (v6.1.18)
+- @react-navigation/native-stack (v6.11.0)
+- @react-navigation/stack (v6.4.1)
+
+### UI Components
+- react-native-gesture-handler
+- react-native-safe-area-context
+- react-native-screens
+- @react-native-masked-view/masked-view
+
+### Development Tools
+- Metro bundler
+- Prettier for code formatting
+- ESLint for code linting
+- Jest for testing
+
+## Project Structure
+
+```
+src/
+├── components/         # Reusable UI components
+├── screens/           # Screen components
+├── services/          # API and business logic
+├── styles/           # Global styles and themes
+├── hooks/            # Custom React hooks
+├── navigation/       # Navigation configuration
+└── utils/            # Utility functions
 ```
 
-If everything is set up _correctly_, you should see your new app running in your _Android Emulator_ or _iOS Simulator_ shortly provided you have set up your emulator/simulator correctly.
+## Development Approach
 
-This is one way to run your app — you can also run it directly from within Android Studio and Xcode respectively.
+### UI/UX Design
+- Dark theme implementation with a focus on readability
+- Consistent styling using global theme configuration
+- Responsive layout supporting various screen sizes
+- Clear error messaging for input validation
 
-## Step 3: Modifying your App
+### State Management
+- React's built-in useState for local state management
+- Custom hooks for navigation and business logic
 
-Now that you have successfully run the app, let's modify it.
+### API Integration
+- RESTful API communication using fetch
+- Proper error handling and loading states
+- Type-safe API responses using TypeScript interfaces
 
-1. Open `App.tsx` in your text editor of choice and edit some lines.
-2. For **Android**: Press the <kbd>R</kbd> key twice or select **"Reload"** from the **Developer Menu** (<kbd>Ctrl</kbd> + <kbd>M</kbd> (on Window and Linux) or <kbd>Cmd ⌘</kbd> + <kbd>M</kbd> (on macOS)) to see your changes!
+### Code Quality
+- Strict TypeScript configuration for type safety
+- ESLint and Prettier for code consistency
+- Component-based architecture for reusability
+- Jest setup for unit testing
 
-   For **iOS**: Hit <kbd>Cmd ⌘</kbd> + <kbd>R</kbd> in your iOS Simulator to reload the app and see your changes!
+## Environment Setup
 
-## Congratulations! :tada:
+Create a `.env` file in the root directory:
 
-You've successfully run and modified your React Native App. :partying_face:
+```env
+NEXT_PUBLIC_API_LINK=http://localhost:8000
+```
 
-### Now what?
+For Android development, update the API link in your `.env.development`:
+```env
+NEXT_PUBLIC_API_LINK=http://10.0.2.2:8000
+```
 
-- If you want to add this new React Native code to an existing application, check out the [Integration guide](https://reactnative.dev/docs/integration-with-existing-apps).
-- If you're curious to learn more about React Native, check out the [Introduction to React Native](https://reactnative.dev/docs/getting-started).
+## Available Scripts
 
-# Troubleshooting
+```bash
+# Start the development server
+npm start
 
-If you can't get this to work, see the [Troubleshooting](https://reactnative.dev/docs/troubleshooting) page.
+# Run the iOS simulator
+npm run ios
 
-# Learn More
+# Run the Android emulator
+npm run android
 
-To learn more about React Native, take a look at the following resources:
+# Run tests
+npm test
 
-- [React Native Website](https://reactnative.dev) - learn more about React Native.
-- [Getting Started](https://reactnative.dev/docs/environment-setup) - an **overview** of React Native and how setup your environment.
-- [Learn the Basics](https://reactnative.dev/docs/getting-started) - a **guided tour** of the React Native **basics**.
-- [Blog](https://reactnative.dev/blog) - read the latest official React Native **Blog** posts.
-- [`@facebook/react-native`](https://github.com/facebook/react-native) - the Open Source; GitHub **repository** for React Native.
+# Lint code
+npm run lint
+
+# Format code
+npm run format
+```
+
+## Contributing
+
+1. Fork the repository
+2. Create your feature branch (`git checkout -b feature/AmazingFeature`)
+3. Commit your changes (`git commit -m 'Add some AmazingFeature'`)
+4. Push to the branch (`git push origin feature/AmazingFeature`)
+5. Open a Pull Request
+
+## License
+
+This project is licensed under the MIT License - see the LICENSE file for details.
+
+## Acknowledgments
+
+- Bitcoin price data provided by CoinDesk API
+- Network difficulty data from Blockchain.info

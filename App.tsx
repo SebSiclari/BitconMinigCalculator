@@ -21,7 +21,11 @@ function App(): JSX.Element {
 
   return (
     <NavigationContainer>
-      <Stack.Navigator>
+      <Stack.Navigator
+      screenOptions={{
+        headerShown: false,
+      }}
+      >
         <Stack.Screen name="Home" component={HomeScreen} />
         <Stack.Screen name="Outcome" component={OutcomeScreen} />
       </Stack.Navigator>

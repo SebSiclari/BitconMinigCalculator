@@ -40,4 +40,19 @@ export const styles = StyleSheet.create({
       fontSize: 12,
       marginTop: 4,
     },
+    buttonContainer: {
+      flexDirection: 'row',
+      gap: 12,
+      paddingHorizontal: 16,
+      paddingVertical: 20,
+      maxWidth: 480,
+      alignSelf: 'center',
+      width: '100%',
+    },
+    calculateButton: {
+      flex: 1,
+    },
+    resetButton: {
+      flex: 1,
+    },
   });
