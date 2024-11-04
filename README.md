@@ -44,8 +44,6 @@ yarn install
 
 ```bash
 npm start
-# or
-yarn start
 ```
 
 4. Run the application
@@ -53,13 +51,6 @@ yarn start
 ```bash
 # For iOS
 npm run ios
-# or
-yarn ios
-
-# For Android
-npm run android
-# or
-yarn android
 ```
 
 ## Technology Stack
@@ -151,16 +142,4 @@ npm start
 
 # Run the iOS simulator
 npm run ios
-
-# Run the Android emulator
-npm run android
-
-# Run tests
-npm test
-
-# Lint code
-npm run lint
-
-# Format code
-npm run format
 ```
