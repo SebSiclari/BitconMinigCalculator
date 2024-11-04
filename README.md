@@ -18,7 +18,7 @@ A React Native mobile application that helps users calculate the profitability o
 
 ### Prerequisites
 
-- Node.js (v14 or higher)
+- Node.js (v18 or higher)
 - npm or yarn
 - React Native development environment setup
 - iOS Simulator or Android Emulator
