@@ -1,6 +1,6 @@
-import { MiningCalculatorResponse } from "./global";
+import {MiningCalculatorResponse} from './global';
 
 export type RootStackParamList = {
-    Home: any;
-    Outcome: { calculationResults: MiningCalculatorResponse };
-  }
+  Home: any;
+  Outcome: {calculationResults: MiningCalculatorResponse};
+};

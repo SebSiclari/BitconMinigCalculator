@@ -26,11 +26,13 @@ A React Native mobile application that helps users calculate the profitability o
 ### Installation
 
 1. Clone the repository
+
 ```bash
 git clone https://github.com/yourusername/bitcoin-mining-calculator.git
 ```
 
 2. Install dependencies
+
 ```bash
 cd bitcoin-mining-calculator
 npm install
@@ -39,6 +41,7 @@ yarn install
 ```
 
 3. Start the Metro bundler
+
 ```bash
 npm start
 # or
@@ -46,6 +49,7 @@ yarn start
 ```
 
 4. Run the application
+
 ```bash
 # For iOS
 npm run ios
@@ -61,21 +65,25 @@ yarn android
 ## Technology Stack
 
 ### Core Technologies
+
 - React Native (v0.72.5)
 - TypeScript (v4.8.4)
 
 ### Navigation
+
 - @react-navigation/native (v6.1.18)
 - @react-navigation/native-stack (v6.11.0)
 - @react-navigation/stack (v6.4.1)
 
 ### UI Components
+
 - react-native-gesture-handler
 - react-native-safe-area-context
 - react-native-screens
 - @react-native-masked-view/masked-view
 
 ### Development Tools
+
 - Metro bundler
 - Prettier for code formatting
 - ESLint for code linting
@@ -97,21 +105,25 @@ src/
 ## Development Approach
 
 ### UI/UX Design
+
 - Dark theme implementation with a focus on readability
 - Consistent styling using global theme configuration
 - Responsive layout supporting various screen sizes
 - Clear error messaging for input validation
 
 ### State Management
+
 - React's built-in useState for local state management
 - Custom hooks for navigation and business logic
 
 ### API Integration
+
 - RESTful API communication using fetch
 - Proper error handling and loading states
 - Type-safe API responses using TypeScript interfaces
 
 ### Code Quality
+
 - Strict TypeScript configuration for type safety
 - ESLint and Prettier for code consistency
 - Component-based architecture for reusability
@@ -126,6 +138,7 @@ NEXT_PUBLIC_API_LINK=http://localhost:8000
 ```
 
 For Android development, update the API link in your `.env.development`:
+
 ```env
 NEXT_PUBLIC_API_LINK=http://10.0.2.2:8000
 ```
@@ -151,20 +164,3 @@ npm run lint
 # Format code
 npm run format
 ```
-
-## Contributing
-
-1. Fork the repository
-2. Create your feature branch (`git checkout -b feature/AmazingFeature`)
-3. Commit your changes (`git commit -m 'Add some AmazingFeature'`)
-4. Push to the branch (`git push origin feature/AmazingFeature`)
-5. Open a Pull Request
-
-## License
-
-This project is licensed under the MIT License - see the LICENSE file for details.
-
-## Acknowledgments
-
-- Bitcoin price data provided by CoinDesk API
-- Network difficulty data from Blockchain.info

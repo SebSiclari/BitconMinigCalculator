@@ -1,31 +1,21 @@
 import React from 'react';
-import { NavigationContainer } from '@react-navigation/native';
-import { createNativeStackNavigator } from '@react-navigation/native-stack';
-import { RootStackParamList } from './src/interfaces/RootNavigator';
-import { HomeScreen } from './src/screens/HomeScreen/HomeScreen';
-import { OutcomeScreen } from './src/screens/OutcomeScreen/OutcomeScreen';
-import {
-  SafeAreaView,
-  StyleSheet,
-  useColorScheme,
-} from 'react-native';
-
-
-
-       
+import {NavigationContainer} from '@react-navigation/native';
+import {createNativeStackNavigator} from '@react-navigation/native-stack';
+import {RootStackParamList} from './src/interfaces/RootNavigator';
+import {HomeScreen} from './src/screens/HomeScreen/HomeScreen';
+import {OutcomeScreen} from './src/screens/OutcomeScreen/OutcomeScreen';
+import { StyleSheet, useColorScheme} from 'react-native';
 
 function App(): JSX.Element {
   const isDarkMode = useColorScheme() === 'dark';
   const Stack = createNativeStackNavigator<RootStackParamList>();
 
-
   return (
     <NavigationContainer>
       <Stack.Navigator
-      screenOptions={{
-        headerShown: false,
-      }}
-      >
+        screenOptions={{
+          headerShown: false,
+        }}>
         <Stack.Screen name="Home" component={HomeScreen} />
         <Stack.Screen name="Outcome" component={OutcomeScreen} />
       </Stack.Navigator>

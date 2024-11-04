@@ -1,15 +1,15 @@
 import React from 'react';
-import { View, Text, TouchableOpacity, StyleSheet } from 'react-native';
-import { useNavigation } from '@react-navigation/native';
+import {View, Text, TouchableOpacity, StyleSheet} from 'react-native';
+import {useNavigation} from '@react-navigation/native';
 
 interface CustomHeaderProps {
   title: string;
   showBack?: boolean;
 }
 
-export const CustomHeader: React.FC<CustomHeaderProps> = ({ 
-  title, 
-  showBack = true 
+export const CustomHeader: React.FC<CustomHeaderProps> = ({
+  title,
+  showBack = true,
 }) => {
   const navigation = useNavigation();
 
@@ -17,10 +17,9 @@ export const CustomHeader: React.FC<CustomHeaderProps> = ({
     <View style={styles.header}>
       <View style={styles.headerContent}>
         {showBack && (
-          <TouchableOpacity 
-            style={styles.backButton} 
-            onPress={() => navigation.goBack()}
-          >
+          <TouchableOpacity
+            style={styles.backButton}
+            onPress={() => navigation.goBack()}>
             <Text style={styles.backArrow}>‹</Text>
           </TouchableOpacity>
         )}
@@ -37,7 +36,7 @@ const styles = StyleSheet.create({
     backgroundColor: '#231f10',
     paddingBottom: 16,
     borderBottomWidth: 1,
-    borderBottomColor: '#494222', 
+    borderBottomColor: '#494222',
   },
   headerContent: {
     flexDirection: 'row',
