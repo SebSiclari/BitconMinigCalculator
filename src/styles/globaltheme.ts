@@ -1,16 +1,18 @@
-import {StyleSheet} from 'react-native';
+import { StyleSheet, Dimensions } from 'react-native';
+
+const { width } = Dimensions.get('window');
+const isTablet = width >= 768; // iPad width threshold
 
 export const theme = {
   colors: {
-    background: '#231f10', // Main background
-    input: '#494222', // Input background
-    inputPlaceholder: '#cbc090', // Input placeholder text
-    text: '#FFFFFF', // White text
-    secondary: '#cbc090', // Secondary text (labels, etc)
+    background: '#231f10',
+    input: '#494222',
+    inputPlaceholder: '#cbc090',
+    text: '#FFFFFF',
+    secondary: '#cbc090',
   },
 };
 
-// Global styles that can be shared across screens
 export const globalStyles = StyleSheet.create({
   container: {
     flex: 1,
@@ -18,53 +20,64 @@ export const globalStyles = StyleSheet.create({
   },
   header: {
     backgroundColor: '#231f10',
-    padding: 16,
-    paddingBottom: 8,
+    padding: isTablet ? 24 : 16,
+    paddingBottom: isTablet ? 16 : 8,
     alignItems: 'center',
     justifyContent: 'center',
   },
   headerText: {
     color: '#FFFFFF',
-    fontSize: 20,
+    fontSize: isTablet ? 24 : 20,
     fontWeight: 'bold',
     textAlign: 'center',
-    paddingHorizontal: 48,
+    paddingHorizontal: isTablet ? 64 : 48,
   },
   inputContainer: {
-    maxWidth: 480,
-    paddingHorizontal: 16,
-    paddingVertical: 12,
+    maxWidth: isTablet ? 600 : 480,
+    paddingHorizontal: isTablet ? 24 : 16,
+    paddingVertical: isTablet ? 16 : 12,
+    alignSelf: 'center',
+    width: '100%',
   },
   label: {
     color: '#FFFFFF',
-    fontSize: 16,
+    fontSize: isTablet ? 18 : 16,
     fontWeight: '500',
-    marginBottom: 8,
+    marginBottom: isTablet ? 12 : 8,
   },
   input: {
     backgroundColor: '#494222',
     color: '#FFFFFF',
     borderRadius: 12,
-    padding: 16,
-    height: 56,
-    fontSize: 16,
+    padding: isTablet ? 20 : 16,
+    height: isTablet ? 64 : 56,
+    fontSize: isTablet ? 18 : 16,
     fontWeight: 'normal',
   },
   inputPlaceholder: {
     color: '#cbc090',
   },
   button: {
-    backgroundColor: '#FFB800', // Brighter yellow that complements the brown
-    padding: 14,
+    backgroundColor: '#FFB800',
+    padding: isTablet ? 18 : 14,
     borderRadius: 12,
-    minWidth: 120,
+    minWidth: isTablet ? 200 : 120,
     alignItems: 'center',
     justifyContent: 'center',
+    alignSelf: 'center',
+    width: isTablet ? '50%' : '90%',
+    marginTop: isTablet ? 32 : 24,
   },
   buttonText: {
     color: '#231f10',
-    fontSize: 16,
+    fontSize: isTablet ? 18 : 16,
     fontWeight: 'bold',
     textAlign: 'center',
+  },
+  scrollContainer: {
+    flexGrow: 1,
+  },
+  contentContainer: {
+    paddingBottom: isTablet ? 40 : 24,
   },
 });

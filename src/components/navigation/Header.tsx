@@ -9,7 +9,7 @@ interface CustomHeaderProps {
 
 export const CustomHeader: React.FC<CustomHeaderProps> = ({
   title,
-  showBack = true,
+  showBack = title === 'Outcome',
 }) => {
   const navigation = useNavigation();
 
