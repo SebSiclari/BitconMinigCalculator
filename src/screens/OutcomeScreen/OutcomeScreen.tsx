@@ -1,5 +1,5 @@
 import React from 'react';
-import {View, Text, TouchableOpacity} from 'react-native';
+import {View, Text, TouchableOpacity, ScrollView} from 'react-native';
 import {RouteProp} from '@react-navigation/native';
 import {NativeStackNavigationProp} from '@react-navigation/native-stack';
 import {RootStackParamList} from '../../interfaces/RootNavigator';
@@ -19,7 +19,8 @@ export const OutcomeScreen: React.FC<Props> = ({route, navigation}) => {
 
   return (
     <SafeAreaView style={globalStyles.container}>
-      <CustomHeader title="Outcome" />
+      <ScrollView>
+        <CustomHeader title="Outcome" />
       <View style={styles.content}>
         <View style={styles.card}>
           <Text style={styles.sectionTitle}>Daily</Text>
@@ -103,7 +104,8 @@ export const OutcomeScreen: React.FC<Props> = ({route, navigation}) => {
           onPress={() => navigation.goBack()}>
           <Text style={globalStyles.buttonText}>Calculate Again</Text>
         </TouchableOpacity>
-      </View>
+        </View>
+      </ScrollView>
     </SafeAreaView>
   );
 };
