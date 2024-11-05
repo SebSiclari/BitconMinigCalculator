@@ -6,6 +6,10 @@ import {
   TouchableOpacity,
   ActivityIndicator,
   Alert,
+  ScrollView,
+  KeyboardAvoidingView,
+  Platform,
+  Dimensions,
 } from 'react-native';
 import {styles} from './style';
 import {theme, globalStyles} from '../../styles/globaltheme';
@@ -17,6 +21,8 @@ import {CustomHeader} from '../../components/navigation/Header';
 export const HomeScreen = () => {
   const {navigationApp} = useNavigationApp();
   const [loading, setLoading] = useState(false);
+  const {width} = Dimensions.get('window');
+  const isTablet = width >= 768;
   const [inputs, setInputs] = useState({
     hash_rate: '',
     power_consumption: '',
@@ -89,10 +95,15 @@ export const HomeScreen = () => {
 
   return (
     <SafeAreaView style={globalStyles.container}>
-      <CustomHeader title="Calculator" />
-      <View style={styles.content}>
-        <View style={globalStyles.inputContainer}>
-          <Text style={globalStyles.label}>Hash Rate (TH/s)</Text>
+       <CustomHeader title="Calculator" />
+      <ScrollView>
+      <KeyboardAvoidingView 
+        behavior={Platform.OS === 'ios' ? 'padding' : 'height'}
+        style={{ flex: 1 }}
+        keyboardVerticalOffset={Platform.OS === 'ios' ? (isTablet ? 100 : 64) : 0}
+      >
+          <View style={globalStyles.inputContainer}>
+            <Text style={globalStyles.label}>Hash Rate (TH/s)</Text>
           <TextInput
             style={globalStyles.input}
             placeholderTextColor={theme.colors.inputPlaceholder}
@@ -162,8 +173,9 @@ export const HomeScreen = () => {
           ) : (
             <Text style={globalStyles.buttonText}>Calculate</Text>
           )}
-        </TouchableOpacity>
-      </View>
+          </TouchableOpacity>
+        </KeyboardAvoidingView>
+      </ScrollView>
     </SafeAreaView>
   );
 };
